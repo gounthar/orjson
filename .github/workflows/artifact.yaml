@@ -177,6 +177,13 @@ jobs:
             rustflags: '-Z unstable-options -C panic=immediate-abort -Z mir-opt-level=4 -D warnings -C target-cpu=z10',
             target: 's390x-unknown-linux-gnu',
           },
+          {
+            arch: 'riscv64',
+            cflags: '-Os -fstrict-aliasing',
+            features: 'no_panic',
+            rustflags: '-Z unstable-options -C panic=immediate-abort -Z mir-opt-level=4 -D warnings',
+            target: 'riscv64gc-unknown-linux-gnu',
+          },
         ]
     steps:
     - uses: actions/checkout@v6
